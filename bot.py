@@ -26,10 +26,12 @@ roasts = [
     'did you kill both of your parents by them looking at your ugly ass face?'
 ]
 
-@bot.slash_command()
-@commands.has_permissions(manage_messages=True)
-async def mouth(ctx, word):
-    await ctx.respond(word)
+#I'm pretty sure this is against discords ToS so I disabled it.
+
+#@bot.slash_command()
+#@commands.has_permissions(manage_messages=True)
+#async def mouth(ctx, word):
+#    await ctx.respond(word)
 
 @bot.slash_command()
 @commands.has_permissions(manage_messages = True)
