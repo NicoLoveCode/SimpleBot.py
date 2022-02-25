@@ -4,6 +4,7 @@ from discord import Option
 
 #This isn't an actual bot, its just code for a bot. you'll have to make your own bot user and put the token here, and it'll run this code on your bot user.
 #You also need to keep this on at all times if you want the bot to always respond.
+#Or you could of course use heroku, which is free.
 
 #These are the variables you need to configure.
 token = 'token here'
