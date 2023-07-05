@@ -34,14 +34,14 @@ roasts = [
 #async def mouth(ctx, word):
 #    await ctx.respond(word)
 
-@bot.slash_command()
+@bot.slash_command(name = "unmute", description = "unmute any muted members")
 @commands.has_permissions(manage_messages = True)
 async def unmute(ctx, member: discord.Member):
     permDisR = discord.utils.get(ctx.guild.roles, name = 'Muted')
     await member.remove_roles(permDisR)
     await ctx.respond('Unmuted.')
 
-@bot.slash_command()
+@bot.slash_command(name = "mute", description = "mute any member")
 @commands.has_permissions(manage_messages = True)
 async def mute(ctx, member: discord.Member):
     permDisR = discord.utils.get(ctx.guild.roles, name = 'Muted')
@@ -58,7 +58,9 @@ async def permserror(ctx, error):
     if isinstance(error, commands.MissingPermissions):
         ctx.respond('Sorry! You dont have permission.')
 
-@bot.slash_command()
+
+
+@bot.slash_command(name = 'unban', description = 'unban any banned members')
 @commands.has_permissions(ban_members = True)
 async def unban(ctx, member):
     banned_users = await ctx.guild.bans()
@@ -75,7 +77,7 @@ async def permserror(ctx, error):
     if isinstance(error, commands.MissingPermissions):
         ctx.respond('Sorry! You dont have permission.')
 
-@bot.slash_command()
+@bot.slash_command(name = 'ban', descirption = 'ban any member')
 @commands.has_permissions(ban_members = True)
 async def ban(ctx, user:discord.Member, *, reason = None):
     if reason == None:
@@ -92,7 +94,7 @@ async def permserror(ctx, error):
     if isinstance(error, commands.MissingPermissions):
         ctx.respond('Sorry! You dont have permission.')
 
-@bot.slash_command()
+@bot.slash_command(name = 'kick' , description = 'kick any member')
 @commands.has_permissions(kick_members = True)
 async def warn(ctx, user:discord.Member, *, reason = None):
     if reason == None:
@@ -103,6 +105,8 @@ async def warn(ctx, user:discord.Member, *, reason = None):
 async def permserror(ctx, error):
     if isinstance(error, commands.MissingPermissions):
         ctx.respond('Sorry! You dont have permission.')
+
+
 
 @bot.event
 async def on_message(message):
